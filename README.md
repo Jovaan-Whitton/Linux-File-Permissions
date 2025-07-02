@@ -8,7 +8,7 @@ If permissions do not match the users’ authorization, they will be modified to
 
 ---
 
-[View Full Portfolio Document](file_permissions_linux_portfolio.docx)
+[View Full Portfolio Document](file-permissions-linux-portfolio.docx)
 
 ---
 
