@@ -8,6 +8,10 @@ If permissions do not match the users’ authorization, they will be modified to
 
 ---
 
+[View Full Portfolio Document](file_permissions_linux_portfolio.docx)
+
+---
+
 ## Check File and Directory Details
 
 To check the file and directory details within the `projects` directory, I used the command:
