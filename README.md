@@ -49,4 +49,5 @@ In the projects directory the files and directories belong to Researcher 2, so t
 
 ## Summary
 
-The commands used here have allowed me to ensure that this system is secure by adding permissions to authorized owner types and removing permissions from unauthorized owner types.
+This project showcases my hands-on understanding of Linux file system security. I used commands like ls -la and chmod to audit and modify permissions on sensitive files and directories.
+By removing unauthorized access, restricting hidden file write access, and enforcing principle-of-least-privilege on directories, I ensured a secure CLI environment aligned with best practices in role-based access control and system hardening.
