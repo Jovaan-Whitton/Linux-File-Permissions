@@ -1,15 +1,34 @@
 # File Permissions in Linux – Portfolio
-File permissions in Linux
-
 
 ## Project description
 
-Linux commands are what allow users to communicate and control the OS. As a security professional I have been tasked with examining existing file permissions on the file system, to ensure the appropriate users on the research team are authorized with the appropriate permissions. If permissions do not match the authorization of users, they will be modified to authorize appropriate users and remove any unauthorized access.
+This project demonstrates my hands-on understanding of Linux file system permissions, a critical concept in securing systems from unauthorized access. As a security analyst, I simulated an auditing scenario where I reviewed and modified file and directory permissions to ensure that only authorized users on the research team had appropriate access. The project focused on identifying misconfigurations and applying role-based access control principles.
 
+---
+
+## Objectives
+
+- Audit file and directory permissions using ls -la
+- Interpret Linux permission strings
+- Modify permissions with chmod to match organizational policy
+- Secure hidden files and restrict unauthorized access to sensitive directories
+
+---
+
+## Toools and Commands used
+
+- OS: Linux
+- Commands: `ls`, `-la`, `chmod`
+
+---
 
 ## Check file and directory details
 
-To check the file and directory details within the projects directory I used command “ls -la”. The command “ls” lists all contents within a directory or file. Adding the option “-l” will display a list of all permissions for files and sub-directories within a directory. Option “-a” will display any hidden files. Using command “ls -la” will display all file and directory permissions within the project's sub-directory including hidden files.
+Used the following command to list files, permissions, and hidden files:
+
+- `ls -la`
+
+This displayed ownership, permissions, and visibility status of files within the project directory..
 
 <details>
   <summary>Output of `ls -la` command</summary>
@@ -18,9 +37,16 @@ To check the file and directory details within the projects directory I used com
 
 </details>
 
+---
+
 ## Describe the permissions string
 
-The output shows permissions granted for files and directories within the project’s directory. For example, the 10-character permission string for file” project_k.txt” is read as follows: The 1st character “-” represents that the permissions are associated with a file, if it was a “d” the permissions would be associated with a directory. The 2nd through 4th character represents the permissions granted to the user, they have read permissions represented by “r” and write permissions represented by “w”, the “-” in this case indicates they lack execute permissions which would be represented by “x”. The 5th through 7th characters represents permissions granted to the group they have read and write permissions but lack execute permissions. The 8th- 10th characters represent permissions granted to others. They have read and write permissions but lack execute permissions.
+Each file or directory in Linux has a 10-character permission string. Here's an example breakdown for project_k.txt:
+
+- The first character: - = file, d = directory
+- Characters 2–4: user permissions (r = read, w = write, x = execute)
+- Characters 5–7: group permissions
+- Characters 8–10: others (everyone else)
 
 <details>
   <summary>Example of permission string breakdown</summary>
@@ -29,9 +55,13 @@ The output shows permissions granted for files and directories within the projec
 
 </details>
 
+---
+
 ## Change file permissions
 
-Our company doesn't allow the other owner type to have write permissions to any files so we must change the permission of file projects_k.txt as it is the only file that grants the other owner type write permissions. We do this using the command “chmod o-w projects_k.txt.”
+The file projects_k.txt mistakenly granted write permissions to others. I corrected it using:
+
+- `chmod o-w project_k.txt`
 
 <details>
   <summary>Removing write permissions for others using chmod</summary>
@@ -40,9 +70,13 @@ Our company doesn't allow the other owner type to have write permissions to any 
 
 </details>
 
+---
+
 ## Change file permissions on a hidden file
 
-The research team archived “. project_x.txt” which is why it appears as a hidden file, hidden files appear with a “.” before the file name. This file should not grant any owner type write permissions. However, the user and group owner type should have read permissions for this file. To assign the correct permissions to this file the command “chmod u=r,g=r .project_x.txt” should be used.  The chmod command indicates we are changing permissions, the “u=r” represents changes to the user owner type “u” the “=” indicates that previous permissions should be overwritten by the permission in the command “r”, the “g=r” represents changes to the group owner type “g” the “=” indicates that previous permissions should be overwritten by the permission in the command “r”. The .projects_x.txt is the file in which permissions will be modified. Alternatively, the command “chmod u-w,g–w+r .project_x.txt” can be used, in this command the “+” means to add a permission, while “-” means to remove a permission.
+The hidden file .project_x.txt was found to allow write access. It should only allow read access for the user and group. I corrected this using:
+
+- `chmod u=r,g=r .project_x.txt`
 
 <details>
   <summary>Changing permissions on a hidden file</summary>
@@ -51,9 +85,13 @@ The research team archived “. project_x.txt” which is why it appears as a hi
 
 </details>
 
+---
+
 ## Change directory permissions
 
-In the projects directory the files and directories belong to Researcher 2, so they alone should have access to the draft’s directory and its contents. As the owner, the user owner type should be the only one with execute access, represented by an “x”. To do this we use the command “chmod g-x drafts”. The chmod command indicates we are changing permissions, the “g-x” argument states we want to remove execute permissions from the group owner type, and the “drafts” argument indicates we want to remove the group owner types execute permissions from the draft directory
+Only Researcher 2 should have access to the drafts/ directory. To remove execute permissions from the group:
+
+- `chmod g-x drafts`
 
 <details>
   <summary>Restricting directory access using chmod</summary>
@@ -62,7 +100,21 @@ In the projects directory the files and directories belong to Researcher 2, so t
 
 </details>
 
+---
+
 ## Summary
 
-This project showcases my hands-on understanding of Linux file system security. I used commands like ls -la and chmod to audit and modify permissions on sensitive files and directories.
-By removing unauthorized access, restricting hidden file write access, and enforcing principle-of-least-privilege on directories, I ensured a secure CLI environment aligned with best practices in role-based access control and system hardening.
+This project showcases my ability to:
+
+- Analyze and interpret Linux file and directory permissions
+- Apply access control principles via CLI
+- Harden systems by enforcing the principle of least privilege
+- Understanding and modifying file permissions is essential in system administration, IT support, and security operations. This lab strengthened my command-line confidence and security mindset.
+
+---
+
+## Let’s Connect
+
+I'm seeking entry-level roles in IT Support, SOC Analysis, or System Administration where I can apply my Linux and security skills.
+- Email: jovaan.jwhitton@gmail.comLinkedIn: 
+- linkedin.com/in/jovaan-whitton-profile
