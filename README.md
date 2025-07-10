@@ -1,4 +1,4 @@
-# File Permissions in Linux – Portfolio
+# File Permissions in Linux
 
 ## Project description
 
