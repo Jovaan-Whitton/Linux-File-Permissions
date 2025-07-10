@@ -113,8 +113,4 @@ This project showcases my ability to:
 
 ---
 
-## Let’s Connect
-
-I'm seeking entry-level roles in IT Support, SOC Analysis, or System Administration where I can apply my Linux and security skills.
-- **Email**: jovaan.jwhitton@gmail.comLinkedIn: 
-- **LinkedIn**: [linkedin.com/in/jovaan-whitton-profile](https://linkedin.com/in/jovaan-whitton-profile)
+*[Visit My GitHub Landing Page](https://github.com/Jovaan-Whitton)*
